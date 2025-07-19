@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 🎯 Smart Goal Planner
+=======
+# smart-goal-planner# 🎯 
+>>>>>>> 04eeaae1b3da3dba048d36aaf8dbe1daf110d11a
 
 A beginner-friendly React app for managing savings goals, tracking deposits, and viewing progress. Simulates full CRUD with `json-server`.
 
@@ -38,3 +42,19 @@ json-server --watch db.json -p 3001
 cd smart-goal-planner
 npm install
 npm start
+<<<<<<< HEAD
+=======
+Usage
+
+    Overview: Summary of goals
+
+    My Goals: List + edit + deposit
+
+    Add Goal: Create or update goal
+
+    Deposit Tab: Select goal + add funds
+
+🤝 Contributing
+
+Fork → Improve → Pull Request
+>>>>>>> 04eeaae1b3da3dba048d36aaf8dbe1daf110d11a
