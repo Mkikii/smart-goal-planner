@@ -1,4 +1,4 @@
-# smart-goal-planner# 🎯 Smart Goal Planner
+# smart-goal-planner# 🎯 
 
 A beginner-friendly React app for managing savings goals, tracking deposits, and viewing progress. Simulates full CRUD with `json-server`.
 
