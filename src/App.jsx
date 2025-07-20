@@ -13,11 +13,14 @@ function App() {
   const [activeTab, setActiveTab] = useState('overview'); // Controls which section is visible
   const [successMessage, setSuccessMessage] = useState(null); // State for success messages
 
+  // API Base URL - now using your live API instead of localhost
+  const API_BASE_URL = 'https://my-json-server.typicode.com/Mkikii/smart-goal-planner';
+
   // Effect to fetch initial goal data when the component mounts
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/goals'); // Using port 3001
+        const response = await fetch(`${API_BASE_URL}/goals`); // Updated to use live API
         if (!response.ok) {
           // Throw an error if the network response is not successful
           throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -26,7 +29,7 @@ function App() {
         setGoals(data); // Update goals state with fetched data
       } catch (error) {
         console.error('Error fetching goals:', error);
-        setError('Failed to load goals. Please ensure json-server is running on port 3001.');
+        setError('Failed to load goals. Please check your internet connection.');
       } finally {
         setIsLoading(false); // Set loading to false regardless of success or failure
       }
@@ -46,7 +49,7 @@ function App() {
   // Function to add a new goal to the database and update state
   const addGoal = async (newGoal) => {
     try {
-      const response = await fetch('http://localhost:3001/goals', {
+      const response = await fetch(`${API_BASE_URL}/goals`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -72,7 +75,7 @@ function App() {
   // Function to update an existing goal in the database and state
   const updateGoal = async (updatedGoal) => {
     try {
-      const response = await fetch(`http://localhost:3001/goals/${updatedGoal.id}`, {
+      const response = await fetch(`${API_BASE_URL}/goals/${updatedGoal.id}`, {
         method: 'PUT', // PUT replaces the entire resource
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedGoal)
@@ -100,7 +103,7 @@ function App() {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3001/goals/${id}`, { method: 'DELETE' });
+      const response = await fetch(`${API_BASE_URL}/goals/${id}`, { method: 'DELETE' });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.statusText}`);
       }
@@ -123,7 +126,7 @@ function App() {
       }
       const updatedAmount = Number(goal.savedAmount) + Number(amount);
       
-      const response = await fetch(`http://localhost:3001/goals/${goalId}`, {
+      const response = await fetch(`${API_BASE_URL}/goals/${goalId}`, {
         method: 'PATCH', // PATCH is used for partial updates (only savedAmount)
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ savedAmount: updatedAmount })
