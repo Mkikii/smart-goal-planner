@@ -2,15 +2,16 @@ body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #2e2d30ff;
+  background-color: #14010eff;
   color: #333;
   line-height: 1.6;
+  font-size: 14px; /* Base font size */
 }
 
 .app {
   max-width: 1000px;
   margin: 20px auto;
-  background-color: #330707ff;
+  background-color: #d4ceceff;
   border-radius: 10px; /* Slightly more rounded */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
   overflow: hidden;
@@ -18,7 +19,7 @@ body {
 
 /* Header Styling */
 .app-header {
-  background-color: #0d0d0eff; /* Deep Forest Green */
+  background-color: #0d0d0eff;
   color: white;
   padding: 25px; /* Increased padding */
   text-align: center;
@@ -52,10 +53,10 @@ body {
   padding: 12px 25px; /* More padding */
   cursor: pointer;
   font-size: 1.05em; /* Slightly larger font */
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+  transition: background-color 0.5s ease, color 0.3s ease, transform 0.1s ease;
   border-radius: 6px; /* Slightly more rounded */
   margin: 0 8px; /* Increased margin */
-  font-weight: 600; /* Bolder text */
+  font-weight: 600;
 }
 
 .tabs button:hover {
@@ -122,6 +123,16 @@ body {
   border-bottom-right-radius: 10px;
   border-top: 1px solid #eee;
   font-weight: 500;
+}
+
+/* Target the highlighted elements */
+.highlighted,
+.overview-text {
+  font-size: 2rem !important;
+  text-align: center !important;
+  display: block;
+  width: 100%;
+  font-weight: bold;
 }
 
 /* Overview Component Specifics */
@@ -308,11 +319,11 @@ body {
 }
 
 .goal-actions button.edit {
-  background-color: #2196f3; /* Blue */
+  background-color: #011729ff; /* Blue */
   color: white;
 }
 .goal-actions button.edit:hover {
-  background-color: #1976d2;
+  background-color: #137968ff;
 }
 
 .goal-actions button.delete {
